@@ -1,5 +1,11 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
+from typing import Optional
+
 
 class FeedbackSchema(BaseModel):
-    prediction_id: str
-    is_accurate: bool
+    name: str
+    email: EmailStr
+    phone: Optional[str] = None
+    is_accurate: Optional[bool] = None
+    rating: Optional[int] = None
+    feedback: Optional[str] = None
